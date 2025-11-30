@@ -1,0 +1,43 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "commonjs",
+    "lib": ["ES2022", "DOM"],
+    "moduleResolution": "node",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "./dist",
+    "rootDir": "./tests",
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["tests/*"],
+      "@/types/*": ["tests/types/*"],
+      "@/page-objects/*": ["tests/page-objects/*"],
+      "@/utils/*": ["tests/utils/*"],
+      "@/fixtures/*": ["tests/fixtures/*"],
+      "@/constants/*": ["tests/constants/*"],
+      "@/optimized/*": ["tests/optimized/*"]
+    }
+  },
+  "include": [
+    "tests/**/*",
+    "**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "test-results",
+    "playwright-report",
+    "dist",
+    "**/*.js",
+    "**/*.spec.js"
+  ]
+}

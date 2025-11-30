@@ -1,0 +1,68 @@
+{
+  "name": "test-automation-playground",
+  "version": "1.0.0",
+  "description": "Test automation for https://play1.automationcamp.ir/ and https://qaplayground.dev/",
+  "main": "tests/",
+  "scripts": {
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "test:report": "playwright show-report",
+    "test:codegen": "playwright codegen https://play1.automationcamp.ir/",
+
+    "test:optimized": "playwright test tests/optimized",
+    "test:parallel": "playwright test --workers=4",
+    "test:serial": "playwright test --workers=1",
+    "test:ci": "playwright test --reporter=json,html,junit",
+
+    "test:wait": "playwright test tests/optimized/wait-conditions.spec.ts",
+    "test:mouse": "playwright test tests/optimized/mouse-actions.spec.ts",
+    "test:forms": "playwright test tests/optimized/forms.spec.ts",
+    "test:login": "playwright test tests/optimized/login.spec.ts",
+    "test:home": "playwright test tests/optimized/home.spec.ts",
+
+    "test:qa": "playwright test tests/",
+    "test:qa-dynamic": "playwright test tests/dynamic-table.spec.ts",
+    "test:qa-verify": "playwright test tests/verify-account.spec.ts",
+    "test:qa-tags": "playwright test tests/tags-input.spec.ts",
+    "test:qa-tab": "playwright test tests/new-tab.spec.ts",
+    "test:qa-sortable": "playwright test tests/sortable-list.spec.ts",
+    "test:qa-popup": "playwright test tests/popup.spec.ts",
+    "test:qa-dropdown": "playwright test tests/multi-level-dropdown.spec.ts",
+
+    "test:chrome": "playwright test --project=desktop-chrome",
+    "test:mobile": "playwright test --project=mobile-chrome",
+    "test:tablet": "playwright test --project=tablet-chrome",
+    "test:all-devices": "playwright test --project=desktop-chrome --project=mobile-chrome --project=tablet-chrome",
+
+    "test:specific": "playwright test --grep",
+    "test:smoke": "playwright test --grep 'smoke'",
+    "test:regression": "playwright test --grep 'regression'",
+
+    "lint": "tslint tests/**/*.ts",
+    "lint:fix": "tslint tests/**/*.ts --fix",
+    "type-check": "tsc --noEmit",
+    "clean": "rimraf test-results dist playwright-report .nyc_output coverage",
+
+    "test:performance": "playwright test --reporter=html --reporter=json",
+    "test:record": "playwright test --trace on",
+    "test:retry": "playwright test --retries=3",
+
+    "install-browsers": "npx playwright install",
+    "install-deps": "npm install && npm run install-browsers"
+  },
+  "keywords": ["testing", "automation", "playwright", "e2e", "test-automation-playground", "qa-playground"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.40.0",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.0.0",
+    "eslint-plugin-playwright": "^0.19.0",
+    "rimraf": "^5.0.0"
+  }
+}
